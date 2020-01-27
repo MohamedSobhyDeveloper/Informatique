@@ -1,6 +1,7 @@
 package com.example.informatique.views;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -34,7 +35,7 @@ public class MainActivity extends BaseActivity implements HandleRetrofitResp {
     LinearLayout partnerListMoreLayout;
     @BindView(R.id.company_layout)
     LinearLayout companyLayout;
-
+    CompanyModel companyModel;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,8 +50,17 @@ public class MainActivity extends BaseActivity implements HandleRetrofitResp {
 
     @OnClick(R.id.partner_list_more_layout)
     public void onViewClicked() {
-
+        Intent intent=new Intent(MainActivity.this,PartnerListActivity.class);
+        intent.putParcelableArrayListExtra(Constant.partnerList,companyModel.getResult().getHumanPartners());
+        startActivity(intent);
     }
+
+
+
+
+
+
+    //region Call Api
 
     private void CallCompanyApi() {
         String companyNum=getIntent().getStringExtra(Constant.companyNumber);
@@ -58,7 +68,11 @@ public class MainActivity extends BaseActivity implements HandleRetrofitResp {
         meMap.put("cr", companyNum);
         HandelCalls.getInstance(this).call(DataEnum.CallCompanyInfo.name(), meMap, true, this);
 
+
+
     }
+    //endregion
+
 
     //region Call Retrofit Response
 
@@ -88,7 +102,7 @@ public class MainActivity extends BaseActivity implements HandleRetrofitResp {
 
     @SuppressLint("SetTextI18n")
     private void getCompanyAction(Object o) {
-        CompanyModel companyModel=(CompanyModel)o;
+         companyModel=(CompanyModel)o;
         companyNameTv.setText(companyModel.getResult().getArabicCommercialName()+"");
         expirtDateTv.setText("expiryDate:  "+companyModel.getResult().getExpiryDate());
         companyLayout.setVisibility(View.VISIBLE);

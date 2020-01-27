@@ -21,7 +21,6 @@ public class BaseActivity extends AppCompatActivity {
         Log.e("CurrentScreen", this.getClass().getSimpleName());
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
-
     }
 
 

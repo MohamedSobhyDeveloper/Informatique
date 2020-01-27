@@ -15,6 +15,7 @@ public class Constant {
     @SuppressLint("StaticFieldLeak")
     private static Constant instance = null;
     public static String companyNumber = "companyNumber";
+    public static String partnerList = "partnerList";
 
 
     public static Constant getInstance(Context context) {

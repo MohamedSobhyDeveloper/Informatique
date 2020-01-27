@@ -1,9 +1,12 @@
 package com.example.informatique.models;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class HumanPartners {
+public class HumanPartners implements Parcelable {
     @Expose
     @SerializedName("partnerType")
     private PartnerType partnerType;
@@ -22,6 +25,25 @@ public class HumanPartners {
     @Expose
     @SerializedName("nameAr")
     private String nameAr;
+
+    protected HumanPartners(Parcel in) {
+        percentage = in.readString();
+        nIN = in.readString();
+        nationality = in.readString();
+        nameAr = in.readString();
+    }
+
+    public static final Creator<HumanPartners> CREATOR = new Creator<HumanPartners>() {
+        @Override
+        public HumanPartners createFromParcel(Parcel in) {
+            return new HumanPartners(in);
+        }
+
+        @Override
+        public HumanPartners[] newArray(int size) {
+            return new HumanPartners[size];
+        }
+    };
 
     public PartnerType getPartnerType() {
         return partnerType;
@@ -69,5 +91,18 @@ public class HumanPartners {
 
     public void setNameAr(String nameAr) {
         this.nameAr = nameAr;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(percentage);
+        dest.writeString(nIN);
+        dest.writeString(nationality);
+        dest.writeString(nameAr);
     }
 }

@@ -1,0 +1,122 @@
+<LinearLayout app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:id="@+id/linear"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_marginStart="@dimen/_10sdp"
+    android:layout_marginEnd="@dimen/_10sdp"
+    android:layout_marginTop="@dimen/_10sdp"
+    android:background="@drawable/roundedbuttondrawablewhite"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Name : "
+                android:layout_gravity="center"
+                android:textColor="@color/colorPrimary"
+                tools:ignore="HardcodedText" />
+
+
+
+
+            <TextView
+                android:id="@+id/name_title_tv"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:singleLine="false"
+                tools:text="mohamed "
+                android:textAlignment="viewStart"
+                tools:ignore="HardcodedText,RtlCompat" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Nationality : "
+                android:layout_gravity="center"
+                android:textColor="@color/colorPrimary"
+                tools:ignore="HardcodedText" />
+
+
+
+
+            <TextView
+                android:id="@+id/nationality_tv"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:singleLine="false"
+                tools:text="mohamed "
+                android:textAlignment="viewStart"
+                tools:ignore="HardcodedText,RtlCompat" />
+
+
+        </LinearLayout>
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp"
+
+            >
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:text="nIN: "
+                android:textColor="@color/colorPrimary"
+                tools:ignore="HardcodedText,RtlCompat" />
+
+
+
+            <TextView
+                android:id="@+id/nin_tv"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:text="123456"
+                tools:ignore="HardcodedText,RtlCompat" />
+
+
+
+
+
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+

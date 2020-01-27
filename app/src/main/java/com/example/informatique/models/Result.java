@@ -3,6 +3,7 @@ package com.example.informatique.models;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Result {
@@ -65,7 +66,7 @@ public class Result {
     private List<String> establishmentPartners;
     @Expose
     @SerializedName("humanPartners")
-    private List<HumanPartners> humanPartners;
+    private ArrayList<HumanPartners> humanPartners;
 
     public String getCommercialRegistrationCode() {
         return commercialRegistrationCode;
@@ -219,11 +220,11 @@ public class Result {
         this.establishmentPartners = establishmentPartners;
     }
 
-    public List<HumanPartners> getHumanPartners() {
+    public ArrayList<HumanPartners> getHumanPartners() {
         return humanPartners;
     }
 
-    public void setHumanPartners(List<HumanPartners> humanPartners) {
+    public void setHumanPartners(ArrayList<HumanPartners> humanPartners) {
         this.humanPartners = humanPartners;
     }
 }

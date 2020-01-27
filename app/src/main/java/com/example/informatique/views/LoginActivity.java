@@ -33,6 +33,7 @@ public class LoginActivity extends BaseActivity {
             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
             intent.putExtra(Constant.companyNumber, companyNumEdt.getText().toString());
             startActivity(intent);
+            finish();
         }else {
             companyNumEdt.setError("Please Enter Correct Number");
 

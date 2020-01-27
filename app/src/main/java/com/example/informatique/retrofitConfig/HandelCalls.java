@@ -12,6 +12,7 @@ import com.example.informatique.utlitites.Loading;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.Objects;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -19,13 +20,10 @@ import retrofit2.Response;
 
 
 /**
- * Created by lenovo on 1/3/2018.
+ * Created by sobhy on 27/1/2020.
  */
 
 public class HandelCalls {
-    /**
-     * Created by lenovo on 6/28/2017.
-     */
 
     private static final String TAG = HandelCalls.class.getSimpleName();
 
@@ -103,7 +101,7 @@ public class HandelCalls {
                 }else if (response.isSuccessful() && response.body() != null) {
                         if (onRespnse != null)
                             Log.d("testing", "onResponse() minma called with: call = [" + call + "], response = [" + response + "]");
-                        onRespnse.onResponseSuccess(flag, response.body());
+                        Objects.requireNonNull(onRespnse).onResponseSuccess(flag, response.body());
 
                       // TODO - 4 Add 400 to condition base on (LoginActivity Response)
 //                        if (response.code() == 400 || response.code() == 401||response.code()==404)
@@ -132,4 +130,6 @@ public class HandelCalls {
         });
 
     }
+
+
 }
